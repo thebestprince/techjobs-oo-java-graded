@@ -23,10 +23,11 @@ public class Job {
 
     public Job  (String name, Employer anEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency){
         this();
-        employer = anEmployer;
-        location = aLocation;
-        positionType = aPositionType;
-        coreCompetency = aCoreCompetency;
+        this.name = name;
+        this.employer = anEmployer;
+        this.location = aLocation;
+        this.positionType = aPositionType;
+        this.coreCompetency = aCoreCompetency;
 
 
 
@@ -47,10 +48,21 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+    @Override
+    public String toString(){
+        return"\nID: "+id+"\n"+
+        "Name: "+name+"\n"+
+        "Employer: "+employer+"\n"+
+        "Location "+location+"\n"+
+                "Position type "+location+"\n"+
+                "Core Competency: "+coreCompetency+"\n";
+
+    }
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+
 
 
     public String getName() {
