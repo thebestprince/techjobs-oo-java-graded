@@ -50,12 +50,20 @@ public class Job {
     }
     @Override
     public String toString(){
-        return"\nID: "+id+"\n"+
+        if (name.equals("")){name = "Data not available";}
+        if (employer.getValue().equals("")||employer.getValue()==null){employer.setValue("Data not available");}
+        if (location.getValue().equals("")||location.getValue()==null){location.setValue("Data not available");}
+        if (positionType.getValue().equals("")||positionType.getValue()==null){positionType.setValue("Data not available");}
+        if (coreCompetency.getValue().equals("")||coreCompetency.getValue()==null){coreCompetency.setValue("Data not available");}
+        String userInput = "\nID: "+id+"\n"+
         "Name: "+name+"\n"+
         "Employer: "+employer+"\n"+
-        "Location "+location+"\n"+
-                "Position type "+location+"\n"+
+        "Location: "+location+"\n"+
+                "Position Type: "+positionType+"\n"+
                 "Core Competency: "+coreCompetency+"\n";
+
+
+        return userInput;
 
     }
 
